@@ -2,6 +2,11 @@
 (require 'tramp)
 (setq tramp-default-method "scp")
 
+;; Clean up the interface a bit
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+
 ;; Evil-mode is quite nice
 (package-install 'evil)
 (evil-mode 1)

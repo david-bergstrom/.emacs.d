@@ -25,8 +25,13 @@
   (package-refresh-contents))
 
 ;; List of all wanted packages
-(setq package-list '(evil auctex haskell-mode adaptive-wrap flyspell color-theme-solarized))
-
+(setq package-list '(evil
+                     auctex
+                     linum-relative
+                     adaptive-wrap
+                     flyspell
+                     markdown-mode
+                     color-theme-solarized))
 
 ;; Install programs which isn't installed
 (dolist (package package-list)
@@ -34,8 +39,7 @@
     (package-install package)))
 
 ;; Tramp makes it easy to edit files that are somewhere else.
-(require 'tramp)
-(setq tramp-default-method "scp")
+(setq tramp-default-method "ssh")
 
 ;; Clean up the interface a bit
 (tool-bar-mode -1)
@@ -74,7 +78,7 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; Solarized is an awesome theme
-(set-frame-parameter nil 'background-mode 'light)
+(set-frame-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
 
 ;; Loads Haskell mode which helps when editing Haskell
@@ -88,3 +92,10 @@
             (auto-fill-mode -1)
             (adaptive-wrap-prefix-mode 1)))
             ;;(flyspell-mode 1)))
+
+;; Line number mode is nice
+(linum-relative-global-mode)
+
+(setq-default fill-column 79)
+(add-hook 'markdown-mode-hook
+          'turn-on-auto-fill)

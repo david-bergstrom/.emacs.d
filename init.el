@@ -18,7 +18,7 @@
 ;; Enable the package manager
 (require 'package)
 (push '("melpa" . "http://melpa.milkbox.net/packages/") package-archives)
-(push '("marmalade" . "http://marmalade-repo.org/packages/") package-archives)
+;;(push '("marmalade" . "http://marmalade-repo.org/packages/") package-archives)
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -31,6 +31,9 @@
                      adaptive-wrap
                      flyspell
                      markdown-mode
+                     ; Maybe some other day..?
+                     ;org
+                     ;magit
                      color-theme-solarized))
 
 ;; Install programs which isn't installed
@@ -78,7 +81,7 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; Solarized is an awesome theme
-(set-frame-parameter nil 'background-mode 'dark)
+(set-frame-parameter nil 'background-mode 'light)
 (load-theme 'solarized t)
 
 ;; Loads Haskell mode which helps when editing Haskell

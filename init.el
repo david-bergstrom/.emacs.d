@@ -87,7 +87,7 @@
 (load-theme 'solarized t)
 
 ;; Loads Haskell mode which helps when editing Haskell
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ;; AUCTex is my favorite library for editing LaTeX.
 

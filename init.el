@@ -26,6 +26,7 @@
 
 ;; List of all wanted packages
 (setq package-list '(evil
+                     evil-leader
                      auctex
                      linum-relative
                      adaptive-wrap
@@ -50,6 +51,7 @@
 (scroll-bar-mode -1)
 
 ;; Evil-mode is quite nice
+(global-evil-leader-mode)
 (evil-mode 1)
 
 ;; Disable tabs
@@ -102,3 +104,11 @@
 (setq-default fill-column 79)
 (add-hook 'markdown-mode-hook
           'turn-on-auto-fill)
+
+;; Leader mode is nice as well
+
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+  "w" 'save-buffer)
+
+(evil-leader/set-key-for-mode 'latex-mode "p" 'preview-buffer)
